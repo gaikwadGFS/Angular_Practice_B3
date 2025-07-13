@@ -1,0 +1,47 @@
+<h3>Structural Directive</h3>
+<ul>
+    <li>*ngIf</li>
+    <li>*ngFor</li>
+    <li>*ngSwitch</li>
+</ul>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div *ngIf="isDivVisible1" class="bg-info p-4">
+                <h2>Div 1</h2>
+            </div>
+        </div>
+        <div class="col-3">
+            <div *ngIf="toggleDiv2" class="bg-success p-4">
+                <h2>Div 2</h2>
+            </div>
+        </div>
+        <div class="col-3">
+            <div *ngIf="num1 == num2" class="bg-primary p-4">
+                <h2>Div 3</h2>
+            </div>
+        </div>
+        <div class="col-3">
+            <div *ngIf="active" class="bg-danger p-4">
+                <h2>Div 4</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button type="button" class="btn btn-primary" (click)="hideDiv1()">Hide</button>
+            <button type="button" class="btn btn-danger" (click)="showDiv2()">Show</button>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-primary" (click)="toggle()">Toggle</button>
+        </div>
+        <div class="col-3">
+            <input type="text" name="" id="" [(ngModel)]="num1">
+             <input type="text" name="" id="" [(ngModel)]="num2">
+        </div>
+        <div class="col-3">
+            <input type="checkbox" name="" id="" [(ngModel)]="active">
+        </div>
+    </div>
+</div>

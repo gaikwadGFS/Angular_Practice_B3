@@ -1,0 +1,45 @@
+<p>data-binding works!</p>
+<h1>Data Binding</h1>
+<h3>1.One Way Data Binding</h3>
+<ul>
+    <li>Interpolation</li>
+    <li>Property binding </li>
+    <li>Event Binding</li>
+</ul>
+
+<h3>Two way Data Binding</h3>
+<ul>
+    <li>ngModel</li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h4>Interpolation</h4>
+            <p>My Course name is {{languageName}}</p>
+            <input type="text" value="{{name}}">
+        </div>
+        <div class="col-4">
+            <h4>Property Binding</h4>
+            <input type="checkbox" name="" id="">Normal checkbox
+            <input [type]="inputText" name="" id="">Property Binding
+            <input type="text" name="" id="" [value]="courseName">
+            <img [src]="imgUrl" [alt]="imgMessage" >
+            
+        </div>
+        <div class="col-4">
+            <h4>Event Binding</h4>
+            <button type="button" class="btn btn-success" (click)="greet()">Welcome Message</button>
+            <span (click)="spanMsg()">Click me</span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h4>NgModel</h4>
+            <input type="text" name="" id="" [(ngModel)]="empName">
+           <p> {{empName}}</p>
+        </div>
+    </div>
+</div>
