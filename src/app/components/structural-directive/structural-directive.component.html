@@ -5,7 +5,9 @@
     <li>*ngSwitch</li>
 </ul>
 <hr>
-<div class="container-fluid">
+<!-- *NgIf -->
+<h2>NgIf</h2>
+<div class="container-fluid my-5">
     <div class="row">
         <div class="col-3">
             <div *ngIf="isDivVisible1" class="bg-info p-4">
@@ -38,10 +40,68 @@
         </div>
         <div class="col-3">
             <input type="text" name="" id="" [(ngModel)]="num1">
-             <input type="text" name="" id="" [(ngModel)]="num2">
+            <input type="text" name="" id="" [(ngModel)]="num2">
         </div>
         <div class="col-3">
             <input type="checkbox" name="" id="" [(ngModel)]="active">
         </div>
     </div>
 </div>
+<!-- *NgIf -->
+<hr>
+<!-- *NgFor -->
+
+<div class="container-fluid">
+    <h2>NgFor</h2>
+    <div class="row">
+        <div class="col-3">
+            <p *ngFor="let list of city">{{list}}</p>
+
+        </div>
+        <div class="col-3">
+            <span *ngFor="let list of city">{{list}}</span>
+        </div>
+        <div class="col-3">
+            <select>
+                <option *ngFor="let items of city">{{items}}</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-primary" *ngFor="let btn of city">{{btn}}</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Sr No</td>
+                    <th>Roll No</th>
+                </tr>
+                <tr *ngFor="let num of rollNo ; let srNo = index">
+                    <td>{{srNo+1}}</td>
+                    <td>{{num}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-6">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Active</th>
+                </tr>
+                <tr *ngFor="let details of studentDetails ; let srNo = index">
+                    <td>{{srNo+1}}</td>
+                    <td>{{details.name}}</td>
+                    <td>{{details.age}}</td>
+                    <td>{{details.city}}</td>
+                    <td>{{details.isActive ? 'Yes' :'No' }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- *NgFor -->
