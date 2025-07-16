@@ -4,11 +4,12 @@ import { StudentComponent } from './components/student/student.component';
 import { TypescriptComponent } from './components/typescript/typescript.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
+import { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [StudentComponent, TypescriptComponent,DataBindingComponent,StructuralDirectiveComponent],
+  imports: [StudentComponent, TypescriptComponent,DataBindingComponent,StructuralDirectiveComponent,AttributeDirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
