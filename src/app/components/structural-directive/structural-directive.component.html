@@ -105,3 +105,18 @@
     </div>
 </div>
 <!-- *NgFor -->
+
+<!-- *ngSwitch -->
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div [ngSwitch]="day">
+                <p class="bg-warning" *ngSwitchCase="'Monday'">Start of the week</p>
+                <p  class="bg-warning" *ngSwitchCase="'Friday'">Almost Weekend!</p>
+                <p  class="bg-warning" *ngSwitchCase="'Sunday'">Relax..1 its sunday..</p>
+                <p  class="bg-warning" *ngSwitchDefault>Just another day</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- *ngSwitch -->

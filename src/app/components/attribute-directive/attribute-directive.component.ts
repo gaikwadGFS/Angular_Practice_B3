@@ -5,49 +5,59 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-attribute-directive',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './attribute-directive.component.html',
   styleUrl: './attribute-directive.component.css'
 })
 export class AttributeDirectiveComponent {
 
-  classNameDiv1:string='';
-  classNameDiv2:string='';
-  classNameDiv3:string='';
-  isActive:boolean=true;
-  isCircle:boolean=true;
-  addSucess(){
-     this.classNameDiv1='bg-success';
+  classNameDiv1: string = '';
+  classNameDiv2: string = '';
+  classNameDiv3: string = '';
+  isActive: boolean = true;
+  isCircle: boolean = true;
+  div1Width: number = 100;
+  myClor: string = '';
+  myProgress: number = 0;
+  myCss: any = {
+    'color': 'red',
+    'width': '200px',
+    'height': '200px',
+    'background-color': 'grey'
   }
 
-  addGreen(){
-    this.classNameDiv3 ='bg-success'
+  addSucess() {
+    this.classNameDiv1 = 'bg-success';
   }
 
-  addSecondary(){
-    this.classNameDiv3='bg-secondary'
-  }
-  addInfo(){
- this.classNameDiv3='bg-info'
-  }
-  addDanger(){
- this.classNameDiv3='bg-danger'
-  }
-  addPrimary(){
- this.classNameDiv3='bg-primary'
-  }
-  addWarning(){
- this.classNameDiv3='bg-warning'
+  addGreen() {
+    this.classNameDiv3 = 'bg-success'
   }
 
-  removeSuccess(){
-    this.classNameDiv1='';
+  addSecondary() {
+    this.classNameDiv3 = 'bg-secondary'
   }
-  square(){
-   this.isCircle=false;
+  addInfo() {
+    this.classNameDiv3 = 'bg-info'
+  }
+  addDanger() {
+    this.classNameDiv3 = 'bg-danger'
+  }
+  addPrimary() {
+    this.classNameDiv3 = 'bg-primary'
+  }
+  addWarning() {
+    this.classNameDiv3 = 'bg-warning'
   }
 
-  circle(){
-    this.isCircle=true;
+  removeSuccess() {
+    this.classNameDiv1 = '';
+  }
+  square() {
+    this.isCircle = false;
+  }
+
+  circle() {
+    this.isCircle = true;
   }
 }

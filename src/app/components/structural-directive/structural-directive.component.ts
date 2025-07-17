@@ -18,7 +18,7 @@ export class StructuralDirectiveComponent {
   active:boolean = true;
   city:any[] = ['Pune','Mumbai','Thane','Solapur'];
   rollNo:any[]=[11, 12,13,14,15,16,17,18,19,20];
-
+  day:string='';
   studentDetails:any[]=[
     {
       name:'Yash',

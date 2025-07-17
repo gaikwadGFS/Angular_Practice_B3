@@ -1,6 +1,6 @@
 <h2>attribute-directive works!</h2>
-<p>NgClass</p>
-<p>NgStyle</p>
+<h3>NgClass</h3>
+
 
 
 <div class="container-fluid">
@@ -11,22 +11,22 @@
             </div>
         </div>
         <div class="col-3">
-             <div class="p-3" [ngClass]="classNameDiv2">
+            <div class="p-3" [ngClass]="classNameDiv2">
                 div2
             </div>
         </div>
         <div class="col-3">
-             <div class="p-3" [ngClass]="classNameDiv3">
+            <div class="p-3" [ngClass]="classNameDiv3">
                 div3
             </div>
         </div>
         <div class="col-3">
-             <div class="p-3" [ngClass]="isActive == true ?'bg-success':'bg-danger'" >
+            <div class="p-3" [ngClass]="isActive == true ?'bg-success':'bg-danger'">
                 div4 {{isActive}}
             </div>
         </div>
         <div class="col-3">
-             <div class="p-3"  [ngClass]="isCircle ? 'circle' : 'square'">
+            <div class="p-3" [ngClass]="isCircle ? 'circle' : 'square'">
                 div5
             </div>
         </div>
@@ -38,14 +38,15 @@
             <button type="button" class="btn btn-secondary" (click)="removeSuccess()">Remove Success </button>
         </div>
         <div class="col-3">
-            <input type="text" name="" id="" class="form-control" placeholder="Enter Background Color" [(ngModel)]="classNameDiv2">
+            <input type="text" name="" id="" class="form-control" placeholder="Enter Background Color"
+                [(ngModel)]="classNameDiv2">
         </div>
         <div class="col-3">
-             <button type="button" class="btn btn-success" (click)="addGreen()"> Success </button>
+            <button type="button" class="btn btn-success" (click)="addGreen()"> Success </button>
             <button type="button" class="btn btn-secondary" (click)="addSecondary()"> Secondary </button>
-             <button type="button" class="btn btn-info" (click)="addInfo()"> info </button>
+            <button type="button" class="btn btn-info" (click)="addInfo()"> info </button>
             <button type="button" class="btn btn-danger" (click)="addDanger()"> danger </button>
-             <button type="button" class="btn btn-primary" (click)="addPrimary()"> primary </button>
+            <button type="button" class="btn btn-primary" (click)="addPrimary()"> primary </button>
             <button type="button" class="btn btn-warning" (click)="addWarning()"> warning </button>
         </div>
         <div class="col-3">
@@ -53,7 +54,41 @@
         </div>
         <div class="col-3">
             <button type="button" class="btn btn-primary" (click)="square()">Make Square</button>
-              <button type="button"  class="btn btn-warning" (click)="circle()">Make Circle</button>
+            <button type="button" class="btn btn-warning" (click)="circle()">Make Circle</button>
+        </div>
+    </div>
+</div>
+
+<h3>NgStyle</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="p-3 bg-success" [style.width.px]="div1Width" [style.color]="myClor">
+                div1
+            </div>
+            <input type="color" [(ngModel)]="myClor">
+        </div>
+        <div class="col-3">
+            <div style=" width: 100px; border-radius: 50%;" [ngStyle]="{'color':myClor}">
+                div2
+            </div>
+        </div>
+        <div class="col-3">
+            <div [ngStyle]="myCss">
+                div3
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="progress">
+                <div class="progress-bar" [style.width.%]="myProgress"
+                   ></div>
+            </div>
+            <br>
+            <input type="text" [(ngModel)]="myProgress">
+             <div class="progress my-5">
+                <div class="progress-bar" [ngStyle]="{'width':myProgress + '%'}"
+                   ></div>
+            </div>
         </div>
     </div>
 </div>
