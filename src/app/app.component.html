@@ -1,17 +1,44 @@
 
-<h1>Hello , This is First Angular Project</h1>
-<h3>Component Command</h3>
-<p>ng generate component comonent_Name </p>
-<p>ng g c comonent_Name</p>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="student">Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="typescript">Typescript</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Directive
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="structural_dir">structural</a></li>
+            <li><a class="dropdown-item" routerLink="attribute_dir">Attribute</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="#">Something else here</a></li>
+          </ul>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" routerLink="data_binding">Data Binding</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-<hr>
-
-<app-student></app-student>
-<hr>
-<h1>TypeScript</h1>
-<app-typescript></app-typescript>
-<app-data-binding></app-data-binding>
-<hr>
-<app-structural-directive></app-structural-directive>
-<hr>
-<app-attribute-directive></app-attribute-directive>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-typescript',
@@ -22,8 +23,10 @@ export class TypescriptComponent {
        pName :"ABC",
        pCity:"Pune"
    }
+   
+   cityArray:any[]=["Pune" , "Mumbai","Solapur"];
 
-   constructor(){
+   constructor(private route:Router){
     // this.city ="Mumbai"
     this.city ="Mumbai";
     // this.displayDate();
@@ -33,9 +36,11 @@ export class TypescriptComponent {
 
    }
 
-   cityArray:any[]=["Pune" , "Mumbai","Solapur"];
    
-   
+   navigateToStudent(){
+     this.route.navigateByUrl('student')
+   }
+
    displayDate(){
      console.log("Display Function Working");
      console.log(this.date);
