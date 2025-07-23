@@ -5,6 +5,7 @@ import { StructuralDirectiveComponent } from './components/structural-directive/
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { TemplateFormComponent } from './components/Forms/template-form/template-form.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,10 @@ export const routes: Routes = [
     {
         path:'pipe',
         component:PipeComponent
+    },
+    {
+        path:'templateForm',
+        component:TemplateFormComponent
     }
+
 ];
