@@ -4,6 +4,7 @@ import { TypescriptComponent } from './components/typescript/typescript.componen
 import { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path:'attribute_dir',
         component:AttributeDirectiveComponent
+    },
+    {
+        path:'pipe',
+        component:PipeComponent
     }
 ];

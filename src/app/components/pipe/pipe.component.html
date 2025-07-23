@@ -1,0 +1,25 @@
+<p>pipe works!</p>
+
+<p>Orginal Value - {{name}} & Using pipe - {{name | lowercase }}</p>
+<p>Orginal Value - {{welcomeMsg}} & Using pipe - {{welcomeMsg | uppercase }}</p>
+<p>Orginal Value - {{welcomeMsg}} & Using pipe - {{welcomeMsg | titlecase }}</p>
+<p>Orginal Value - {{currentDate}} & Using pipe - {{currentDate | date:'short' }}</p>
+<p>Orginal Value - {{currentDate}} & Using pipe - {{currentDate | date:'M/d/yy' }}</p> 
+<p>Orginal Value - {{a}} & Using pipe - {{a | currency }}</p>
+<p>{{studentObj}}</p>
+<p>{{studentObj | json}}</p>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Emp Id</th>
+        <th>Name</th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let list of studentObj">
+        <td>{{list.id}}</td>
+        <td>{{list.name | uppercase | na:'--'}}</td>
+        <td>{{list.city |lowercase | na:"NA"}}</td>
+    </tr>
+
+</table>
