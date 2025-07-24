@@ -25,8 +25,9 @@ export class TemplateFormComponent {
   formValue: any;
 
   saveForm() {
+    debugger;
     this.formValue = this.studentObj;
-    
+
   }
 
   resetForm() {

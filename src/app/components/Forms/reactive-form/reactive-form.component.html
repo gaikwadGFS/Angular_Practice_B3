@@ -1,0 +1,70 @@
+<div class="container border border-3 mt-3 p-3">
+    <div class="row my-3">
+        <div class="col-12">
+            <div class=" py-3 text-center">
+                <h3>Reactive Form with validation</h3>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <form class="row g-3" [formGroup]="studentDetails">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">first Name</label>
+            <input type="text" name="fname" class="form-control" formControlName="firstName" id="inputEmail4">
+            <div class="text-danger">
+                @if ( studentDetails.controls['firstName'].touched && studentDetails.controls['firstName'].errors?.['required']) {
+                <span>This is Required</span>
+                } @else if (studentDetails.controls['firstName'].touched && studentDetails.controls['firstName'].errors?.['minlength'] ) {
+                     <span>Min 3 char</span>
+                }            
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Last Name</label>
+            <input type="text" name="lname" class="form-control" id="inputPassword4" formControlName="lastName">
+        </div>
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" name="address" class="form-control" id="inputAddress" formControlName="address"
+                placeholder="1234 Main St">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" name="city" class="form-control" id="inputCity" formControlName="city">
+            <div class="text-danger">
+              @if(studentDetails.controls['city'].touched && studentDetails.controls['city'].errors?.['required']){
+                   <span>Requied</span>
+              }
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" name="zip" class="form-control" id="inputZip" formControlName="zip">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" name="accept" type="checkbox" id="gridCheck" formControlName="isAccept">
+                <label class="form-check-label" for="gridCheck">
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary mx-2" [disabled]="studentDetails.invalid" (click)="saveForm()">Save</button>
+            <button type="submit" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>
+                {{formValue | json}}
+            </div>
+        </div>
+    </div>
+</div>

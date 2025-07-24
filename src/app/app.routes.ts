@@ -6,6 +6,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateFormComponent } from './components/Forms/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,10 @@ export const routes: Routes = [
     {
         path:'templateForm',
         component:TemplateFormComponent
+    },
+     {
+        path:'reactiveForm',
+        component:ReactiveFormComponent
     }
 
 ];
