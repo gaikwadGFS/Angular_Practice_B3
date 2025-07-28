@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" (click)="getAllDetails()">Get data</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let list of postList; let sr = index">
+                    <td>{{sr+1}}</td>
+                    <td>{{list.title}}</td>
+                    <td>{{list.body}}</td>
+                    <td class="d-flex">
+                        <button type="button" class="btn btn-info">Edit</button>
+                         <button type="button" class="btn btn-danger" (click)="deleteRecord(list.id)">Del</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

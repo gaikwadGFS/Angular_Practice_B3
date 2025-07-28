@@ -7,6 +7,8 @@ import { AttributeDirectiveComponent } from './components/attribute-directive/at
 import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateFormComponent } from './components/Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
+import { ImagesComponent } from './components/images/images.component';
+import { ApiIntegrationComponent } from './components/api-integration/api-integration.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +42,14 @@ export const routes: Routes = [
      {
         path:'reactiveForm',
         component:ReactiveFormComponent
+    },
+    {
+        path:'image',
+        component:ImagesComponent
+    },
+     {
+        path:'api',
+        component:ApiIntegrationComponent
     }
 
 ];
