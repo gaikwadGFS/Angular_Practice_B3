@@ -1,8 +1,8 @@
 <button type="button" class="btn btn-primary" (click)="getAllDetails()">Get data</button>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-7">
             <table class="table table-bordered">
                 <tr>
                     <th>Sr No</th>
@@ -15,11 +15,30 @@
                     <td>{{list.title}}</td>
                     <td>{{list.body}}</td>
                     <td class="d-flex">
-                        <button type="button" class="btn btn-info">Edit</button>
+                        <button type="button" class="btn btn-info" (click)="editData(list)">Edit</button>
                          <button type="button" class="btn btn-danger" (click)="deleteRecord(list.id)">Del</button>
                     </td>
                 </tr>
             </table>
+        </div>
+        <div class="col-5">
+            <form action="">
+                <div class="row p-3">
+                    <div class="col-12">
+                        <label for="">Title</label>
+                        <input type="text" name="title" id="" class="form-control" [(ngModel)]="postObj.title">
+                    </div>
+                     <div class="col-12">
+                        <label for="">Description</label>
+                        <textarea name="des" class="form-control"  [(ngModel)]="postObj.body"></textarea>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button type="button" class="btn btn-success mx-3" *ngIf="postObj.id == 0 " (click)="savePostData()">Save - {{postObj.id }}</button>
+                        <button type="button" class="btn btn-primary mx-3" *ngIf="postObj.id !== 0 " (click)="updateData()">Update - {{postObj.id }}</button>
+                         <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

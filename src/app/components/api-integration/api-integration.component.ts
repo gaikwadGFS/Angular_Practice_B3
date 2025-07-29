@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-api-integration',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './api-integration.component.html',
   styleUrl: './api-integration.component.css'
 })
@@ -14,6 +15,12 @@ export class ApiIntegrationComponent {
   // http =inject(HttpClient);
 
   postList: any[] = [];
+  postObj: any = {
+    userId: 0,
+    id: 0,
+    title: "",
+    body: ""
+  }
 
   constructor(private http: HttpClient) {
     this.getAllDetails();
@@ -36,5 +43,31 @@ export class ApiIntegrationComponent {
       alert("something error");
     }
 
+  }
+
+  savePostData() {
+    this.http.post("https://jsonplaceholder.typicode.com/posts", this.postObj).subscribe((res: any) => {
+      alert("Data Save success...!");
+    })
+  }
+
+  reset() {
+    this.postObj = {
+      userId: 0,
+      id: 0,
+      title: "",
+      body: ""
+    }
+  }
+
+  editData(list:any){
+     this.postObj = list;
+     console.log(list);
+  }
+
+  updateData(){
+    this.http.post("https://jsonplaceholder.typicode.com/posts",this.postObj).subscribe((res:any)=>{
+      alert("Updated");
+    })
   }
 }
