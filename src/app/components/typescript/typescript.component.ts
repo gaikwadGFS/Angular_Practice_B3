@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../../resusableComponents/alert/alert.component';
 
 @Component({
   selector: 'app-typescript',
   standalone: true,
-  imports: [],
+  imports: [AlertComponent],
   templateUrl: './typescript.component.html',
   styleUrl: './typescript.component.css'
 })

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PostAPIsService } from '../../services/post-apis.service';
+import { AlertComponent } from '../../resusableComponents/alert/alert.component';
 
 @Component({
   selector: 'app-student',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,AlertComponent],
   templateUrl: './student.component.html',
   styleUrl: './student.component.css'
 })
