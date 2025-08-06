@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PostAPIsService } from '../../services/post-apis.service';
+import { BtnComponent } from '../../resusableComponents/btn/btn.component';
 
 @Component({
   selector: 'app-api-integration',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,BtnComponent],
   templateUrl: './api-integration.component.html',
   styleUrl: './api-integration.component.css'
 })

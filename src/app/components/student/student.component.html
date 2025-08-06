@@ -6,3 +6,7 @@
 <p>Mobile No : 7894562315</p>
 
 <button type="button" class="btn btn-primary" [routerLink]="['/typescript']">Go To TypeScript</button>
+
+<app-btn [btnClass]="'btn btn-success'" [btnText]="'SaveRecord'" (onBtnClick)="getAllData()"></app-btn>
+
+<app-btn [btnClass]="'btn btn-info'" [btnText]="'catchMessage'" (onBtnClick)="getData($event)"></app-btn>

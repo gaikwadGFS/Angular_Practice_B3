@@ -34,6 +34,7 @@
                     </div>
                     <div class="col-12 mt-3">
                         <button type="button" class="btn btn-success mx-3" *ngIf="postObj.id == 0 " (click)="savePostData()">Save - {{postObj.id }}</button>
+                        <app-btn [btnClass]="'btn btn-success mx-3'" [btnText]="'Save'"></app-btn>
                         <button type="button" class="btn btn-primary mx-3" *ngIf="postObj.id !== 0 " (click)="updateData()">Update - {{postObj.id }}</button>
                          <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
                     </div>
