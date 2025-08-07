@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <!-- <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th> -->
+      <th *ngFor="let column of columnData">{{column}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of tableData ; let sr = index">
+      <th scope="row">{{sr+1}}</th>
+      <td *ngFor="let column of columnData">{{data[column]}} </td>
+      <td>
+        <button type="button" class="btn btn-info" (click)="onEdit(data)">Edit</button>
+         <button type="button" class="btn btn-danger" (click)="onDelete(data)">Del</button>
+      </td>
+    </tr>
+   
+  </tbody>
+</table>

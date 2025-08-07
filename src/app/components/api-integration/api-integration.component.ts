@@ -4,18 +4,19 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PostAPIsService } from '../../services/post-apis.service';
 import { BtnComponent } from '../../resusableComponents/btn/btn.component';
+import { TableComponent } from '../../resusableComponents/table/table.component';
 
 @Component({
   selector: 'app-api-integration',
   standalone: true,
-  imports: [CommonModule, FormsModule,BtnComponent],
+  imports: [CommonModule, FormsModule,BtnComponent,TableComponent],
   templateUrl: './api-integration.component.html',
   styleUrl: './api-integration.component.css'
 })
 export class ApiIntegrationComponent {
 
   // http =inject(HttpClient);
-
+  headingArray:any[]=['title','body']
   postList: any[] = [];
   postObj: any = {
     userId: 0,

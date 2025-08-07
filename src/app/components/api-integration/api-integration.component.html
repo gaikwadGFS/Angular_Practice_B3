@@ -43,3 +43,11 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <app-table [columnData]="headingArray" [tableData]="postList" (edit)="editData($event)" (delete)="deleteRecord($event)"></app-table>
+        </div>
+    </div>
+</div>
