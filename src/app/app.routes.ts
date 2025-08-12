@@ -9,47 +9,68 @@ import { TemplateFormComponent } from './components/Forms/template-form/template
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
 import { ImagesComponent } from './components/images/images.component';
 import { ApiIntegrationComponent } from './components/api-integration/api-integration.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
+
+    // deafult route
+
     {
-        path:"student",
-        component:StudentComponent
-    },
-    {
-        path:'typescript',
-        component:TypescriptComponent
-    },
-    {
-        path:'structural_dir',
-        component:StructuralDirectiveComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path:'data_binding',
-        component:DataBindingComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'attribute_dir',
-        component:AttributeDirectiveComponent
-    },
-    {
-        path:'pipe',
-        component:PipeComponent
-    },
-    {
-        path:'templateForm',
-        component:TemplateFormComponent
-    },
-     {
-        path:'reactiveForm',
-        component:ReactiveFormComponent
-    },
-    {
-        path:'image',
-        component:ImagesComponent
-    },
-     {
-        path:'api',
-        component:ApiIntegrationComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: "student",
+                component: StudentComponent
+            },
+            {
+                path: 'typescript',
+                component: TypescriptComponent
+            },
+            {
+                path: 'structural_dir',
+                component: StructuralDirectiveComponent
+            },
+            {
+                path: 'data_binding',
+                component: DataBindingComponent
+            },
+            {
+                path: 'attribute_dir',
+                component: AttributeDirectiveComponent
+            },
+            {
+                path: 'pipe',
+                component: PipeComponent
+            },
+            {
+                path: 'templateForm',
+                component: TemplateFormComponent
+            },
+            {
+                path: 'reactiveForm',
+                component: ReactiveFormComponent
+            },
+            {
+                path: 'image',
+                component: ImagesComponent
+            },
+            {
+                path: 'api',
+                component: ApiIntegrationComponent
+            }
+
+        ]
     }
 
 ];
