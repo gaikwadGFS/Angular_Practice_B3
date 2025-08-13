@@ -11,6 +11,7 @@ import { ImagesComponent } from './components/images/images.component';
 import { ApiIntegrationComponent } from './components/api-integration/api-integration.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './components/gurads/auth.guard';
 
 export const routes: Routes = [
 
@@ -31,7 +32,8 @@ export const routes: Routes = [
         children: [
             {
                 path: "student",
-                component: StudentComponent
+                component: StudentComponent,
+                canActivate:[authGuard]
             },
             {
                 path: 'typescript',
@@ -39,7 +41,8 @@ export const routes: Routes = [
             },
             {
                 path: 'structural_dir',
-                component: StructuralDirectiveComponent
+                component: StructuralDirectiveComponent,
+                canActivate:[authGuard]
             },
             {
                 path: 'data_binding',
@@ -47,7 +50,8 @@ export const routes: Routes = [
             },
             {
                 path: 'attribute_dir',
-                component: AttributeDirectiveComponent
+                component: AttributeDirectiveComponent,
+                canActivate:[authGuard]
             },
             {
                 path: 'pipe',
