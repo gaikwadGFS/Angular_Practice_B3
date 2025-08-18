@@ -14,9 +14,9 @@
                 id="inputEmail4" required minlength="3">
             <div class="text-danger">
                 @if( (fname.touched ||  fname.dirty) && fname.errors?.['required']){
-                <span>This is required</span>
+                <span>{{validationMsg.REQUIRED}}</span>
                 } @else if ((fname.touched ||  fname.dirty) &&  fname.errors?.['minlength']) {
-                <span>Min 3 char</span>
+                <span>{{validationMsg.MIN_LENGTH}}</span>
                 }
 
 
@@ -37,7 +37,7 @@
             <input type="text" name="city" class="form-control" #city="ngModel" [(ngModel)]="studentObj.city" id="inputCity" required>
              <div class="text-danger">
                 @if( (city.touched ||  city.dirty) && city.errors?.['required']){
-                <span>This is required</span>
+                <span>{{validationMsg.REQUIRED}}</span>
                 }
             </div>
         </div>

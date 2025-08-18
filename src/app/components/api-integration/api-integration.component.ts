@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { PostAPIsService } from '../../services/post-apis.service';
 import { BtnComponent } from '../../resusableComponents/btn/btn.component';
 import { TableComponent } from '../../resusableComponents/table/table.component';
+import { Post } from '../../Classes/postData';
+import { IPost } from '../../Interface/Ipost';
 
 @Component({
   selector: 'app-api-integration',
@@ -17,13 +19,9 @@ export class ApiIntegrationComponent {
 
   // http =inject(HttpClient);
   headingArray:any[]=['title','body']
-  postList: any[] = [];
-  postObj: any = {
-    userId: 0,
-    id: 0,
-    title: "",
-    body: ""
-  }
+  postList: IPost[] = [];
+  // postList: any[] = [];
+  postObj: Post = new Post();
 
   constructor(private http: HttpClient, private postService: PostAPIsService) {
     this.getAllDetails();
@@ -68,12 +66,7 @@ export class ApiIntegrationComponent {
     })
   }
   reset() {
-    this.postObj = {
-      userId: 0,
-      id: 0,
-      title: "",
-      body: ""
-    }
+     this.postObj = new Post();
   }
 
   editData(list: any) {

@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Constant } from '../../../Constants/cons';
 
 @Component({
   selector: 'app-template-form',
@@ -11,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TemplateFormComponent {
 
-
+   validationMsg:any = Constant.VALIDATION_MSG;
 
   studentObj: any = {
     firstName: '',
