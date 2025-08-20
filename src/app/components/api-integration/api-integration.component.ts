@@ -7,6 +7,7 @@ import { BtnComponent } from '../../resusableComponents/btn/btn.component';
 import { TableComponent } from '../../resusableComponents/table/table.component';
 import { Post } from '../../Classes/postData';
 import { IPost } from '../../Interface/Ipost';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-api-integration',
@@ -23,8 +24,12 @@ export class ApiIntegrationComponent {
   // postList: any[] = [];
   postObj: Post = new Post();
 
-  constructor(private http: HttpClient, private postService: PostAPIsService) {
+  constructor(private http: HttpClient, private postService: PostAPIsService,private router:Router) {
     this.getAllDetails();
+  }
+
+  newData(){
+    this.router.navigateByUrl('postForm');
   }
 
   // getAllDetails() {
@@ -69,9 +74,9 @@ export class ApiIntegrationComponent {
      this.postObj = new Post();
   }
 
-  editData(list: any) {
-    this.postObj = list;
-    console.log(list);
+  editData(id: number) {
+    this.router.navigate(['postForm',id]);
+   
   }
 
   updateData() {

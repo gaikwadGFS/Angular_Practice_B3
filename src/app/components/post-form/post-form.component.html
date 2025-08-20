@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" (click)="listData()">All List</button>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+              <form action="">
+                <div class="row p-3">
+                    <div class="col-12">
+                        <label for="">Title</label>
+                        <input type="text" name="title" id="" class="form-control" [(ngModel)]="postObj.title">
+                    </div>
+                     <div class="col-12">
+                        <label for="">Description</label>
+                        <textarea name="des" class="form-control"  [(ngModel)]="postObj.body"></textarea>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button type="button" class="btn btn-success mx-3" *ngIf="postObj.id == 0 " (click)="savePostData()">Save - {{postObj.id }}</button>
+                        <!-- <app-btn [btnClass]="'btn btn-success mx-3'" [btnText]="'Save'"></app-btn> -->
+                        <button type="button" class="btn btn-primary mx-3" *ngIf="postObj.id !== 0 " (click)="updateData()">Update - {{postObj.id }}</button>
+                         <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

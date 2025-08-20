@@ -12,6 +12,7 @@ import { ApiIntegrationComponent } from './components/api-integration/api-integr
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './components/gurads/auth.guard';
+import { PostFormComponent } from './components/post-form/post-form.component';
 
 export const routes: Routes = [
 
@@ -72,6 +73,14 @@ export const routes: Routes = [
             {
                 path: 'api',
                 component: ApiIntegrationComponent
+            },
+            {
+                path: 'postForm',
+                component: PostFormComponent
+            },
+             {
+                path: 'postForm/:id',
+                component: PostFormComponent
             }
 
         ]
